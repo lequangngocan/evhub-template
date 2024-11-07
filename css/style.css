@@ -600,7 +600,3 @@ video {
 #qr-shaded-region {
     border-width: 30px !important;
 }
-
-#reader__scan_region {
-    height: 60vh;
-}
