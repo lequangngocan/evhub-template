@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rabbit EVC</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        body {
+            background-color: #e6f0eb;
+            font-family: Arial, sans-serif;
+        }
+        .tabs-container {
+            overflow-x: auto;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch; /* Tạo hiệu ứng cuộn mượt trên iOS */
+        }
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            border-bottom: 2px solid #ccc;
+            margin-top: 10px;
+        }
+        .tab {
+            padding: 10px;
+            color: #666;
+            font-weight: bold;
+            text-align: center;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .tab.active {
+            color: #28a745;
+            border-bottom: 3px solid #28a745;
+        }
+        .search-bar {
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+            border-radius: 20px;
+            padding: 5px 10px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+        }
+        .search-bar input {
+            border: none;
+            outline: none;
+            flex: 1;
+            padding: 5px 10px;
+        }
+        .search-bar i {
+            color: #666;
+        }
+        .content-list {
+            background-color: #f7f7f7;
+            padding: 10px;
+            border-radius: 8px;
+            min-height: 300px; /* Tạm thời cho chiều cao tối thiểu */
+        }
+        .footer-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            border-top: 1px solid #ccc;
+        }
+        .footer-nav .nav-item {
+            text-align: center;
+            color: #666;
+            font-size: 0.85rem;
+        }
+        .footer-nav .nav-item.active {
+            color: #28a745;
+        }
+        .footer-nav .nav-item i {
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Tabs -->
+    <div class="tabs-container">
+    <div class="tabs">
+        <div class="tab active" onclick="switchTab('sac-xe')">Sạc xe</div>
+        <div class="tab" onclick="switchTab('dat-lich')">Đặt lịch</div>
+        <div class="tab" onclick="switchTab('bien-dong')">Biến động</div>
+        <div class="tab" onclick="switchTab('thong-bao')">Thông báo</div>
+    </div>
+    </div>
+
+    <!-- Ô tìm kiếm -->
+    <div class="container">
+        <div class="search-bar">
+            <input type="text" placeholder="Tìm kiếm theo ID">
+            <i class="fas fa-search"></i>
+        </div>
+
+        <!-- Nội dung danh sách -->
+        <div id="content-sac-xe" class="content-list" style="display: block;">
+            <!-- Nội dung của tab Sạc xe -->
+            <p>Danh sách trạm sạc xe...</p>
+        </div>
+        <div id="content-dat-lich" class="content-list" style="display: none;">
+            <!-- Nội dung của tab Đặt lịch -->
+            <p>Danh sách lịch hẹn...</p>
+        </div>
+        <div id="content-bien-dong" class="content-list" style="display: none;">
+            <!-- Nội dung của tab Biến động -->
+            <p>Danh sách biến động...</p>
+        </div>
+        <div id="content-thong-bao" class="content-list" style="display: none;">
+            <!-- Nội dung của tab Biến động -->
+            <p>Danh sách thông báo...</p>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <div class="bottom-nav d-flex justify-content-around">
+        <a href="index.html"><i class="fas fa-home"></i><br>Trang chủ</a>
+        <a href="map.html"><i class="fas fa-charging-station"></i><br>Trạm sạc</a>
+        <a href="qr.html">
+            <i class="fas fa-qrcode"></i>
+            <br>Quét mã
+        </a>
+        <a href="history.html" class="active"><i class="fas fa-history"></i><br>Lịch sử</a>
+        <a href="user.html"><i class="fas fa-user"></i><br>Cá nhân</a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function switchTab(tabId) {
+            // Xóa lớp active khỏi tất cả các tab
+            document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.content-list').forEach(content => content.style.display = 'none');
+
+            // Thêm lớp active vào tab đã chọn và hiển thị nội dung tương ứng
+            document.querySelector(`[onclick="switchTab('${tabId}')"]`).classList.add('active');
+            document.getElementById(`content-${tabId}`).style.display = 'block';
+        }
+    </script>
+</body>
+</html>

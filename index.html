@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evhub</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="subheader">
+            <div class="container d-flex align-items-center">
+                <div class="me-3">
+                    <i class="fas fa-user-circle fa-3x box-logo"></i>
+                </div>
+                <div>
+                    <p class="mb-0">Xin chào!</p>
+                    <h5 class="mb-0">Ngọc An Lê Quang</h5>
+                </div>
+                <a href="javascript:void(0)" class="notify">
+                    <i class="fas fa-bell"></i>
+                </a>
+            </div>
+        </div>
+        <div class="points-box">
+            <div class="container">
+                <div class="card">
+                    <div class="card-body d-flex justify-content-between align-items-center point-row">
+                        <h6 class="mb-0">Điểm khả dụng</h6>
+                        <div>
+                            <h6 class="mb-0 point-number d-inline-block me-2">0 điểm</h6>
+                            <i class="fa-solid fa-angle-right"></i>
+                        </div>
+                    </div>
+                    <hr class="point-hr" />
+                    <div class="card-body d-flex justify-content-around">
+                        <div class="text-center">
+                            <i class="fas fa-history card-icon"></i>
+                            <p class="mb-0">Lịch sử<br />giao dịch</p>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-gem card-icon"></i>
+                            <p class="mb-0">Nạp điểm<br />Rabbit</p>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-tags card-icon"></i>
+                            <p class="mb-0">Voucher<br />ưu đãi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="wrapper">
+        <!-- Điểm sạc đề xuất -->
+        <div class="container mt-3 suggest">
+            <div class="d-flex justify-content-between">
+                <h6 class="text-muted">Điểm sạc đề xuất</h6>
+                <a href="javascript:void(0)" class="suggest__all">Tất cả</a>
+            </div>
+            <div class="row mt-2">
+                <div class="col-6">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/150" class="card-img-top" alt="Station Image">
+                        <div class="card-body">
+                            <h6>HAN29-01</h6>
+                            <p class="text-muted small">Thanh Cong Tower, 79 P...</p>
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-clock text-success me-1"></i>
+                                <span>10.31 km / 15 phút</span>
+                            </div>
+                            <p class="text-danger mt-2 mb-0">0/1 Trụ khả dụng</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/150" class="card-img-top" alt="Station Image">
+                        <div class="card-body">
+                            <h6>HAN29-04</h6>
+                            <p class="text-muted small">1 Đ. Đại Cồ Việt, Bách K...</p>
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-clock text-success me-1"></i>
+                                <span>12.54 km / 19 phút</span>
+                            </div>
+                            <p class="text-danger mt-2 mb-0">0/1 Trụ khả dụng</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quảng cáo -->
+        <div class="container mt-3">
+            <div class="card">
+                <img src="https://via.placeholder.com/300x100" class="card-img-top" alt="Promotion">
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <div class="bottom-nav d-flex justify-content-around">
+        <a href="index.html" class="active"><i class="fas fa-home"></i><br>Trang chủ</a>
+        <a href="map.html"><i class="fas fa-charging-station"></i><br>Trạm sạc</a>
+        <a href="qr.html">
+            <i class="fas fa-qrcode"></i>
+            <br>Quét mã
+        </a>
+        <a href="history.html"><i class="fas fa-history"></i><br>Lịch sử</a>
+        <a href="user.html"><i class="fas fa-user"></i><br>Cá nhân</a>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evhub</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body class="wrapper-user">
+    <div class="container">
+        <!-- Quay lại và tiêu đề -->
+        <div class="d-flex align-items-center mt-4 mb-5">
+            <a href="user.html" class="me-3 text-dark">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+            <h5 class="m-0">Đăng nhập</h5>
+        </div>
+
+        <!-- Logo -->
+        <img src="https://via.placeholder.com/80" alt="Logo" class="logo">
+
+        <!-- Chào mừng -->
+        <p class="text-center">Chào mừng đến với</p>
+        <p class="text-center mb-5 display-1">EVHUB</p>
+
+        <!-- Form đăng nhập -->
+        <form>
+            <!-- Số điện thoại -->
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="phone" placeholder="Nhập số điện thoại">
+                <label for="phone">Nhập số điện thoại</label>
+            </div>
+
+            <!-- Mật khẩu -->
+            <div class="form-floating mb-3 password-input-group">
+                <input type="password" class="form-control" id="password" placeholder="Mật khẩu">
+                <label for="password">Mật khẩu</label>
+                <i class="fas fa-eye password-toggle" onclick="togglePasswordVisibility()"></i>
+            </div>
+
+            <!-- Nhớ mật khẩu và quên mật khẩu -->
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="remember">
+                    <label class="form-check-label" for="remember">Nhớ mật khẩu</label>
+                </div>
+                <a href="#" class="forgot-password">Quên mật khẩu?</a>
+            </div>
+
+            <!-- Đăng nhập ngay -->
+            <button type="submit" class="btn btn-submit-login">Đăng nhập ngay</button>
+
+            <!-- Đăng ký và chính sách -->
+            <p class="text-center mt-3">
+                Bạn chưa có tài khoản? <a href="#" class="register-link">Đăng ký ngay</a>
+            </p>
+            <p class="policy-text">
+                Bằng việc đăng nhập vào ứng dụng là bạn đã đồng ý với <a href="#" class="policy-link">chính sách và
+                    điều khoản</a> của EVHUB
+            </p>
+        </form>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
