@@ -99,6 +99,7 @@ a {
     flex: 1 0 20%;
     padding: 8px 5px;
     color: #6c757d;
+    font-size: 14px;
 }
 
 .bottom-nav a.active {
