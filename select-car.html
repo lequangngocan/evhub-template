@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chọn Xe</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* General Styling */
+        body {
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: auto;
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        /* Back Icon */
+        .back-icon {
+            font-size: 20px;
+            color: #333;
+            cursor: pointer;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Header */
+        .header-title {
+            font-weight: bold;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        /* Charger Options */
+        .charger-options {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .charger-option {
+            width: 50%;
+            background-color: #f8f9fa;
+            border: 1px solid #ccc;
+            text-align: center;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .charger-option.active {
+            background-color: #e0f7ed;
+            border-color: #28a745;
+        }
+
+        .charger-option i {
+            font-size: 30px;
+            color: #28a745;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Account Balance */
+        .account-balance {
+            background-color: #223344;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 16px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            position: relative;
+            text-align: center;
+        }
+
+        .account-balance .icon {
+            font-size: 40px;
+            color: #28a745;
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        /* Available Cars */
+        .available-cars {
+            border: 2px solid #28a745;
+            border-radius: 10px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .available-cars .icon {
+            font-size: 40px;
+            color: #28a745;
+            margin-right: 10px;
+        }
+
+        .available-cars div {
+            margin: auto;
+        }
+
+        /* Additional Info */
+        .price-info {
+            font-size: 12px;
+            color: #666;
+            text-align: center;
+            margin-top: -5px;
+            margin-bottom: 10px;
+        }
+
+        /* Add Car Link */
+        .add-car {
+            color: #28a745;
+            font-weight: bold;
+            font-size: 14px;
+            margin-top: 5px;
+            text-align: center;
+        }
+
+        /* Action Button at the Bottom */
+        .action-button-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            max-width: 400px;
+            background-color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            border-top: 1px solid #ddd;
+        }
+
+        .action-button {
+            background-color: #28a745;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            padding: 10px 0;
+            border-radius: 10px;
+            width: 100%;
+            font-size: 16px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="d-flex align-items-center mb-3 justify-content-center position-relative">
+            <!-- Back Icon -->
+            <a href="qr.html" class="back-icon">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+
+            <!-- Header -->
+            <div class="header-title">Chọn xe</div>
+        </div>
+
+        <!-- Charger Options -->
+        <div class="charger-options">
+            <div class="charger-option active">
+                <i class="fas fa-charging-station"></i>
+                01 (DC) <br>
+                AUD-00038
+            </div>
+            <div class="charger-option">
+                <i class="fas fa-plug"></i>
+                01.2 <br>
+                AUD-00038-95744
+            </div>
+        </div>
+
+        <!-- Electricity Price Info -->
+        <div class="price-info">Đơn giá điện: 9.900đ</div>
+
+        <!-- Add New Car Link -->
+        <div class="text-center mb-2 add-car">
+            + Thêm xe mới
+        </div>
+
+        <!-- Account Balance -->
+        <div class="account-balance">
+            <i class="icon fas fa-wallet"></i>
+            <div>Nguyen Loc</div>
+            <div class="balance">3,187,272đ</div>
+        </div>
+
+        <!-- Available Cars -->
+        <div class="available-cars">
+            <i class="icon fas fa-car"></i>
+            <div>
+                <div>EV One - Demo</div>
+                <small>..</small>
+            </div>
+        </div>
+    </div>
+
+    <!-- Action Button at the Bottom -->
+    <div class="action-button-container">
+        <a href="package.html" class="action-button">
+            Chọn gói sạc
+        </a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

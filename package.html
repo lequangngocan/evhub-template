@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chọn Gói Sạc</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* General Styling */
+        body {
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 400px;
+            margin-top: 20px;
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            position: relative;
+        }
+
+        /* Back Icon */
+        .back-icon {
+            font-size: 20px;
+            color: #333;
+            cursor: pointer;
+            position: absolute;
+            left: 0;
+        }
+
+        /* header-title */
+        .header-title {
+            font-weight: bold;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        /* User Information */
+        .user-info {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .user-info .balance {
+            background-color: #e0f7ed;
+            color: #28a745;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-weight: bold;
+        }
+
+        /* Charge Summary */
+        .charge-summary {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .charge-summary p {
+            font-size: 14px;
+            color: #666;
+            margin: 0;
+        }
+
+        /* Border Bottom for Total Section */
+        .charge-summary .total {
+            font-weight: bold;
+            font-size: 16px;
+            color: #333;
+            padding-top: 5px;
+            border-top: 2px dashed #ccc;
+            margin-top: 5px;
+        }
+
+        .charge-summary .vat-note {
+            font-size: 12px;
+            color: #999;
+            margin-top: 5px;
+        }
+
+        /* Package Options - Ticket Style */
+        .package-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .package-option {
+            width: 48%;
+            background-color: #f8f9fa;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+            color: #333;
+            transition: border-color 0.3s, background-color 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .package-option.selected {
+            border-color: #28a745;
+            background-color: #e0f7ed;
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        /* Ticket cut-out effect */
+        .package-option:before,
+        .package-option:after {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #fff;
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            box-shadow: 0 0 0 1px #ccc;
+        }
+
+        .package-option:before {
+            left: -5px;
+        }
+
+        .package-option:after {
+            right: -5px;
+        }
+
+        /* Box Shadow for Package Options */
+        .package-option {
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Buttons */
+        .action-buttons {
+            display: flex;
+            justify-content: space-between;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            padding: 10px 15px;
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid #ddd;
+        }
+
+        .btn-recharge {
+            background-color: #ccc;
+            color: #333;
+            border-radius: 15px;
+            width: 45%;
+        }
+
+        .btn-start {
+            background-color: #28a745;
+            color: white;
+            font-weight: bold;
+            border-radius: 15px;
+            width: 45%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="d-flex align-items-center justify-content-center position-relative mb-3">
+        <!-- Back Icon -->
+        <a href="select-car.html" class="back-icon">
+            <i class="fas fa-arrow-left"></i>
+        </a>
+    
+        <!-- header-title -->
+        <div class="header-title">Chọn gói sạc</div>
+    </div>
+
+    <!-- User Information -->
+    <div class="user-info">
+        <span><i class="fas fa-user"></i> Nguyen Van B</span>
+        <span class="balance">Khả dụng: 3,187,272đ</span>
+    </div>
+
+    <!-- Charge Summary -->
+    <div class="charge-summary">
+        <p>Gói sạc: <span class="float-end">0đ</span></p>
+        <p>Phí đỗ xe: <span class="float-end">0đ</span></p>
+        <p class="total">Tổng cộng: <span class="float-end">0đ</span></p>
+        <p class="vat-note">*Đã bao gồm VAT</p>
+    </div>
+
+    <!-- Package Options -->
+    <div class="package-options">
+        <div class="package-option selected">Pay as you go</div>
+        <div class="package-option">100.000đ <br> 10.10 kWh</div>
+        <div class="package-option">200.000đ <br> 20.20 kWh</div>
+        <div class="package-option">500.000đ <br> 50.50 kWh</div>
+        <div class="package-option">1.000.000đ <br> 101.01 kWh</div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="action-buttons">
+        <button class="btn btn-recharge">Nạp tiền</button>
+        <button class="btn btn-start">Bắt đầu sạc</button>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Toggle selected class on package options
+    document.querySelectorAll('.package-option').forEach(option => {
+        option.addEventListener('click', function() {
+            document.querySelectorAll('.package-option').forEach(opt => opt.classList.remove('selected'));
+            this.classList.add('selected');
+        });
+    });
+</script>
+
+</body>
+</html>

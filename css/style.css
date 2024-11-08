@@ -312,7 +312,7 @@ a {
 .map-nav-list {
     position: fixed;
     z-index: 2;
-    bottom: 40vh;
+    bottom: 270px;
     left: 10px;
 }
 

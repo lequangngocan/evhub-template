@@ -14,8 +14,8 @@
 <body class="wrapper-user">
     <div class="container">
         <div class="button-container d-flex justify-content-between align-items-center my-3">
-            <button class="btn btn-outline-success btn-reload"><i class="fas fa-sync-alt"></i> Tải lại máy ảnh</button>
-            <div class="group-btn-camera-support">
+            <button class="btn btn-outline-success btn-reload" onclick="restart()"><i class="fas fa-sync-alt"></i> Tải lại máy ảnh</button>
+            <div class="group-btn-camera-support d-none">
                 <button class="btn btn-outline-success me-2"><i class="fas fa-bolt"></i></button>
                 <button class="btn btn-outline-success"><i class="fas fa-camera"></i></button>
             </div>
@@ -55,8 +55,12 @@
     <script>
         function onScanSuccess(decodedText, decodedResult) {
             // handle the scanned code as you like, for example:
-            console.log(`Code matched = ${decodedText}`, decodedResult);
-            alert(`Code matched = ${decodedText}`, decodedResult);
+
+            let shouldPauseVideo = true;
+            let showPausedBanner = false;
+            html5QrcodeScanner.pause(shouldPauseVideo, showPausedBanner);
+            // alert(`Code matched = ${decodedText}`, decodedResult);
+            window.location.href = '/select-car.html';
         }
 
         function onScanFailure(error) {
@@ -67,9 +71,17 @@
 
         let html5QrcodeScanner = new Html5QrcodeScanner(
             "reader",
-            { fps: 10, qrbox: { width: 250, height: 250 } },
-  /* verbose= */ false);
+            {
+                fps: 10,
+                qrbox: { width: 250, height: 250 },
+            },
+            false
+        );
         html5QrcodeScanner.render(onScanSuccess, onScanFailure);
+
+        function restart() {
+            html5QrcodeScanner.render(onScanSuccess, onScanFailure);
+        }
     </script>
 </body>
 
